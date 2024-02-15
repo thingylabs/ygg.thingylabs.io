@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>ygg.thingylabs.io</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="bootstrap.purged.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    iframe:first-child {
+      height: calc(100% - 80px);
+      width: 100%;
+      border: 0;
+    }
+
+    iframe:nth-child(2) {
+      height: 80px;
+      width: 100%;
+      border: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="terminal">
+    <div class="container">
+      <div class="d-flex flex-row-reverse p-2">
+        <a href="https://ygg-only.thingylabs.io/" class="btn btn-light">⚡</a>
+        <a href="https://publicpeers.neilalexander.dev/" class="btn btn-light">Public Peers</a>
+        <a href="speedtest.html" class="btn btn-light">Speedtest</a>
+        <a href="uplink.html" class="btn btn-light">Uplink</a>
+        <a href="index.html" class="btn btn-light">Home</a>
+      </div>
+      <div class="react-terminal-wrapper" data-terminal-name="ygg.thingylabs.io">
+        <div class="react-terminal-window-buttons">
+          <button class="clickable red-btn"></button>
+          <button class="clickable yellow-btn"></button>
+          <button class="clickable green-btn"></button>
+        </div>
+        <div class="react-terminal" style="height: 600px;">
+          <p class="react-terminal-line">NodeInfo:</p>
+          <p class="react-terminal-line">- host: Hetzner Online GmbH</p>
+          <p class="react-terminal-line">- link: 10 GBit</p>
+          <p class="react-terminal-line">- provider (clearnet): <a href="https://www.thingylabs.io">www.thingylabs.io</a></p>
+          <p class="react-terminal-line">- provider (yggdrasil): <a href="https://yyy.thingylabs.io">yyy.thingylabs.io</a></p>
+          <p class="react-terminal-line"></p>
+          <p class="react-terminal-line">Uplink:</p>
+          <p class="react-terminal-line">- tls://ygg-uplink.thingylabs.io:443</p>
+          <p class="react-terminal-line">- quick://ygg-uplink.thingylabs.io:48172</p>
+          <p class="react-terminal-line"></p>
+          <p class="react-terminal-line">Services:</p>
+          <p class="react-terminal-line"> - name: iperf3</p>
+          <p class="react-terminal-line"> usage:</p>
+          <p class="react-terminal-line"> - iperf3 -6 -c ygg-only.thingylabs.io</p>
+          <p class="react-terminal-line"> - iperf3 -4 -c ygg-uplink.thingylabs.io</p>
+          <p class="react-terminal-line"> - name: signalhub</p>
+          <p class="react-terminal-line"> urls:</p>
+          <p class="react-terminal-line"> - https://signalhub.thingylabs.io</p>
+          <p class="react-terminal-line"> - https://signalhub-ygg-only.thingylabs.io</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
