@@ -11,6 +11,11 @@ p {
   text-decoration: underline;
 }
 
+x-nav {
+  display: block;
+  height: 54px;
+}
+
 .react-terminal-wrapper {
   width: 100%;
   background: black;

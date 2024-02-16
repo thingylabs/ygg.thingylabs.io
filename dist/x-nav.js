@@ -46,7 +46,7 @@
   let isYgg
   export default class extends Lego {
     init() {
-      isYgg = document.location.host.includes('-only')
+      isYgg = document.location.host && document.location.host.includes('-only')
     }
   }
 
