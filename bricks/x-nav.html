@@ -1,0 +1,15 @@
+<script>
+  if (document.location.host.includes('-only')) {
+    document.getElementById('ygg-switch').href = 'https://ygg.thingylabs.io/'
+    document.getElementById('ygg-switch').innerHTML = '🔌'
+  }
+</script>
+<template>
+  <div class="d-flex flex-row-reverse p-2">
+    <a href="https://ygg-only.thingylabs.io/" id="ygg-switch" class="btn btn-light">⚡</a>
+    <a href="https://publicpeers.neilalexander.dev/" class="btn btn-light">Public Peers</a>
+    <a href="speedtest.html" class="btn btn-light">Speedtest</a>
+    <a href="uplink.html" class="btn btn-light">Uplink</a>
+    <a href="index.html" class="btn btn-light">Home</a>
+  </div>
+</template>

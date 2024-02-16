@@ -1,0 +1,23 @@
+{
+  "name": "ygg.thingylabs.io",
+  "version": "1.0.0",
+  "description": "A Yggdrasil Network Node",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx lego -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thingylabs/ygg.thingylabs.io.git"
+  },
+  "author": "Per Guth <mail@perguth.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thingylabs/ygg.thingylabs.io/issues"
+  },
+  "homepage": "https://github.com/thingylabs/ygg.thingylabs.io#readme",
+  "dependencies": {
+    "@polight/lego": "^2.0.0-beta.8"
+  }
+}
