@@ -11,7 +11,6 @@
       !isYgg ? '⚡' : '🔌'
     }`),
       h("a", {"href": `https://publicpeers.neilalexander.dev/`, "class": `btn btn-light`}, `Public Peers`),
-      h("a", {"href": `speedtest.html`, "class": `btn btn-light`}, `Speedtest`),
       h("a", {"href": `uplink.html`, "class": `btn btn-light`}, `Uplink`),
       h("a", {"href": `index.html`, "class": `btn btn-light`}, `Home`)
     ])
