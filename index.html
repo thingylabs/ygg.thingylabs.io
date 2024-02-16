@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="style.css">
     <script async src="https://cdn.jsdelivr.net/npm/@webcomponents/custom-elements@1.6.0/custom-elements.min.js"></script>
     <script src="dist/index.js" type="module"></script>
-    <script src="change-background-color.js"></script>
     <style>
       iframe:first-child {
         height: calc(100% - 80px);
@@ -34,7 +33,7 @@
     <div id="terminal">
       <div class="container">
         <x-nav></x-nav>
-        <div class="react-terminal-wrapper" data-terminal-name="ygg.thingylabs.io">
+        <div class="react-terminal-wrapper" data-terminal-name="">
           <x-buttons></x-buttons>
           <div class="react-terminal" style="height: 600px;">
             <iframe src="https://ygg.thingylabs.io/nload/"></iframe>
@@ -44,6 +43,7 @@
       </div>
     </div>
 
+    <script defer src="change-background-color.js"></script>
     <link rel="prefetch" href="https://ygg-only.thingylabs.io/index.html">
   </body>
 </html>

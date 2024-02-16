@@ -16,6 +16,10 @@ x-nav {
   height: 54px;
 }
 
+iframe {
+  display: none;
+}
+
 .react-terminal-wrapper {
   width: 100%;
   background: rgb(37, 42, 51);
