@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ygg.thingylabs.io</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="bootstrap.purged.css">
+    <link rel="stylesheet" href="style.css">
+    <script async src="https://cdn.jsdelivr.net/npm/@webcomponents/custom-elements@1.6.0/custom-elements.min.js"></script>
+    <script src="dist/index.js" type="module"></script>
+
+    <style>
+      iframe:first-child {
+        height: calc(100% - 80px);
+        width: 100%;
+        border: 0;
+      }
+      iframe:nth-child(2) {
+        height: 80px;
+        width: 100%;
+        border: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="terminal">
+      <div class="container">
+        <x-nav></x-nav>
+        <div class="react-terminal-wrapper" data-terminal-name="ygg.thingylabs.io">
+          <x-buttons></x-buttons>
+          <div class="react-terminal" style="height: 600px;">
+            <iframe src="https://ygg.thingylabs.io/nload/"></iframe>
+            <iframe src="https://ygg.thingylabs.io/htop/"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <link rel="prefetch" href="https://ygg-only.thingylabs.io/speedtest.html">
+  </body>
+</html>
