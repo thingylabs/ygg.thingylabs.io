@@ -18,8 +18,7 @@ x-nav {
 
 .react-terminal-wrapper {
   width: 100%;
-  background: black;
-  /* background: rgb(37, 42, 51); */
+  background: rgb(37, 42, 51);
   color: rgb(238, 238, 238);
   font-size: 18px;
   font-family: "Fira Mono", Consolas, Menlo, Monaco, "Courier New", Courier, monospace;
