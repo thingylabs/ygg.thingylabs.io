@@ -15,6 +15,11 @@
     <link rel="stylesheet" href="style.css">
     <script async src="https://cdn.jsdelivr.net/npm/@webcomponents/custom-elements@1.6.0/custom-elements.min.js"></script>
     <script src="dist/index.js" type="module"></script>
+    <style>
+      span {
+        user-select: all;
+      }
+    </style>
   </head>
 
   <body>
@@ -32,18 +37,18 @@
             <p class="react-terminal-line">- sponsor (yggdrasil): <a href="https://yyy.thingylabs.io">yyy.thingylabs.io</a></p>
             <p class="react-terminal-line"></p>
             <p class="react-terminal-line">Uplink:</p>
-            <p class="react-terminal-line">- tls://ygg-uplink.thingylabs.io:443</p>
-            <p class="react-terminal-line">- quick://ygg-uplink.thingylabs.io:48172</p>
+            <p class="react-terminal-line">- <span>tls://ygg-uplink.thingylabs.io:443</span></p>
+            <p class="react-terminal-line">- <span>quick://ygg-uplink.thingylabs.io:48172</span></p>
             <p class="react-terminal-line"></p>
             <p class="react-terminal-line">Services:</p>
             <p class="react-terminal-line"> - name: <a href="https://github.com/esnet/iperf">iperf3</a></p>
             <p class="react-terminal-line">   usage:</p>
-            <p class="react-terminal-line">   - iperf3 -6 -c ygg-only.thingylabs.io</p>
-            <p class="react-terminal-line">   - iperf3 -4 -c ygg-uplink.thingylabs.io</p>
+            <p class="react-terminal-line">   - <span>iperf3 -6 -c ygg-only.thingylabs.io</span></p>
+            <p class="react-terminal-line">   - <span>iperf3 -4 -c ygg-uplink.thingylabs.io</span></p>
             <p class="react-terminal-line"> - name: <a href="https://github.com/mafintosh/signalhub">signalhub</a></p>
             <p class="react-terminal-line">   urls:</p>
-            <p class="react-terminal-line">   - https://signalhub.thingylabs.io</p>
-            <p class="react-terminal-line">   - https://signalhub-ygg-only.thingylabs.io</p>
+            <p class="react-terminal-line">   - <span>https://signalhub.thingylabs.io</span></p>
+            <p class="react-terminal-line">   - <span>https://signalhub-ygg-only.thingylabs.io</span></p>
           </div>
         </div>
       </div>
