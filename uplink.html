@@ -20,6 +20,16 @@
         user-select: all;
       }
     </style>
+    <script>
+      function copy (event) {
+        const element = event.target
+        navigator.clipboard.writeText(element.innerText)
+        element.after(' - copied!')
+        setTimeout(_ => {
+          element.nextSibling.remove()
+        }, 1000)
+      }
+    </script>
   </head>
 
   <body>
@@ -37,18 +47,18 @@
             <p class="react-terminal-line">- sponsor (yggdrasil): <a href="https://yyy.thingylabs.io">yyy.thingylabs.io</a></p>
             <p class="react-terminal-line"></p>
             <p class="react-terminal-line">Uplink:</p>
-            <p class="react-terminal-line">- <span>tls://ygg-uplink.thingylabs.io:443</span></p>
-            <p class="react-terminal-line">- <span>quick://ygg-uplink.thingylabs.io:48172</span></p>
+            <p class="react-terminal-line">- <span onclick="copy(event)">tls://ygg-uplink.thingylabs.io:443</span></p>
+            <p class="react-terminal-line">- <span onclick="copy(event)">quick://ygg-uplink.thingylabs.io:48172</span></p>
             <p class="react-terminal-line"></p>
             <p class="react-terminal-line">Services:</p>
             <p class="react-terminal-line"> - name: <a href="https://github.com/esnet/iperf">iperf3</a></p>
             <p class="react-terminal-line">   usage:</p>
-            <p class="react-terminal-line">   - <span>iperf3 -6 -c ygg-only.thingylabs.io</span></p>
-            <p class="react-terminal-line">   - <span>iperf3 -4 -c ygg-uplink.thingylabs.io</span></p>
+            <p class="react-terminal-line">   - <span onclick="copy(event)">iperf3 -6 -c ygg-only.thingylabs.io</span></p>
+            <p class="react-terminal-line">   - <span onclick="copy(event)">iperf3 -4 -c ygg-uplink.thingylabs.io</span></p>
             <p class="react-terminal-line"> - name: <a href="https://github.com/mafintosh/signalhub">signalhub</a></p>
             <p class="react-terminal-line">   urls:</p>
-            <p class="react-terminal-line">   - <span>https://signalhub.thingylabs.io</span></p>
-            <p class="react-terminal-line">   - <span>https://signalhub-ygg-only.thingylabs.io</span></p>
+            <p class="react-terminal-line">   - <span onclick="copy(event)">https://signalhub.thingylabs.io</span></p>
+            <p class="react-terminal-line">   - <span onclick="copy(event)">https://signalhub-ygg-only.thingylabs.io</span></p>
           </div>
         </div>
       </div>
