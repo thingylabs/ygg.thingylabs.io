@@ -28,6 +28,9 @@ function appendStyle (iframe) {
       background-color: rgb(37, 42, 51) !important;
     }
   `
+  if (!iframe.contentDocument) {
+    return console.log(iframe.contentDocument)
+  }
   iframe.contentDocument.head.appendChild(styleElem)
   iframe.style = 'display: block;'
 }
