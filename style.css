@@ -14,6 +14,7 @@ p {
 x-nav {
   display: block;
   height: 54px;
+  min-width: 510px;
 }
 
 iframe {
@@ -30,12 +31,14 @@ iframe {
   padding: 75px 45px 35px;
   position: relative;
   box-sizing: border-box;
+  min-width: 510px;
 }
 
 .react-terminal {
   overflow: auto;
   display: flex;
   flex-direction: column;
+  min-width: 420px;
 }
 
 .react-terminal-window-buttons {
