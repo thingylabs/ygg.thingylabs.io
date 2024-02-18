@@ -52,7 +52,7 @@
       }
       ul:first-child {
         font-size: smaller;
-        text-align: right;
+        text-align: left;
         padding: 0 5px 10px 0;
       }
       ul:nth-child(2) {
@@ -108,9 +108,14 @@
         width: 51%;
         height: 55%;
       }
+      .close {
+        float: right;
+      }
+      .close:hover {
+        text-decoration: none;
+      }
     </style>
     <script>
-      console.log(localStorage.getItem('tos-accepted'), localStorage.getItem('tos-accepted') === 'true')
       const tosAccepted = localStorage.getItem('tos-accepted') === 'true'
       const hideTosStyle = document.createElement('style')
       hideTosStyle.textContent = '#tos { display: none; }'
@@ -144,6 +149,9 @@
         document.getElementById('en').classList.toggle('display-none')
         document.getElementById('de').classList.toggle('display-none')
       }
+      function leave () {
+        window.location = 'https://ygg.thingylabs.io/'
+      }
     </script>
   </head>
 
@@ -159,6 +167,7 @@
                 <li>Language:</li>
                 <li>🇩🇪 <a href="#" onclick="switchLang('de')">Deutsch</a></li>
                 <li>🇬🇧 <a href="#" onclick="switchLang('en')">English</a></li>
+                <li><a class="close" onclick="leave()" href="https://yggdrasil-network.github.io/">✕</a></li>
               </ul>
               <div id="en">
                 <b>By accepting these terms you agree to:</b>
