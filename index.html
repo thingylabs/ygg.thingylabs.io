@@ -16,13 +16,8 @@
     <script async src="https://cdn.jsdelivr.net/npm/@webcomponents/custom-elements@1.6.0/custom-elements.min.js"></script>
     <script src="dist/index.js" type="module"></script>
     <style>
-      iframe:first-child {
-        height: calc(100% - 80px);
-        width: 100%;
-        border: 0;
-      }
-      iframe:nth-child(2) {
-        height: 80px;
+      iframe:first-of-type {
+        height: calc(100% - 90px);
         width: 100%;
         border: 0;
       }
@@ -37,7 +32,9 @@
           <x-buttons></x-buttons>
           <div class="react-terminal" style="height: 600px;">
             <iframe src="nload/"></iframe>
-            <iframe src="htop/"></iframe>
+            <div style="height: 90px; overflow: hidden;">
+              <iframe src="htop/"></iframe>
+            </div>
           </div>
         </div>
       </div>
