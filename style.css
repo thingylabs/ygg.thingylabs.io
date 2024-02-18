@@ -21,6 +21,10 @@ iframe {
   display: none;
 }
 
+.container {
+  padding: 0;
+}
+
 .react-terminal-wrapper {
   width: 100%;
   background: rgb(37, 42, 51);
