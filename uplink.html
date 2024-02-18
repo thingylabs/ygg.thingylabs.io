@@ -41,21 +41,23 @@
       #tos > div {
         background-color: white;
         border-radius: 4px;
-        padding: 2px 22px 0;
+        padding: 2px 50px 0;
       }
       ul {
         padding-left: 0;
-        text-align: center;
+        text-align: left;
+        min-height: 20px;
       }
       ul li {
         display: inline;
       }
       ul:first-child {
         font-size: smaller;
-        padding: 0 5px 10px 0;
+        padding: 30px 5px 10px 0;
       }
-      ul:nth-child(2) {
-        align-items: center;
+      ol {
+        list-style-type: disc;
+        padding-left: 20px;
       }
       .btn {
         box-sizing: border-box;
@@ -99,19 +101,12 @@
       .display-none {
         display: none;
       }
-      .dimensions-en {
-        width: 51%;
-        height: 43%;
-      }
-      .dimensions-de {
-        width: 51%;
-        height: 55%;
+      .dimensions {
+        width: 55%;
+        height: 45%;
       }
       .close {
         float: right;
-      }
-      .close:hover {
-        text-decoration: none;
       }
     </style>
     <script>
@@ -129,24 +124,17 @@
           element.nextSibling.remove()
         }, 1000)
       }
-      function accepted (lang) {
-        const button = document.getElementById('button-' + lang)
+      function accepted () {
+        const button = document.getElementById('button')
         button.classList.toggle('btn-outline')
         button.classList.toggle('btn-solid')
       }
-      function accept (event, lang) {
+      function accept (event) {
         event.preventDefault()
-        if (document.getElementById('tos-accepted-' + lang).checked) {
+        if (document.getElementById('tos-accepted').checked) {
           localStorage.setItem('tos-accepted', true)
           document.head.appendChild(hideTosStyle)
         }
-      }
-      function switchLang (lang) {
-        const box = document.querySelector('#tos > div')
-        box.classList.toggle('dimensions-de')
-        box.classList.toggle('dimensions-en')
-        document.getElementById('en').classList.toggle('display-none')
-        document.getElementById('de').classList.toggle('display-none')
       }
     </script>
   </head>
@@ -158,35 +146,18 @@
         <div class="react-terminal-wrapper" data-terminal-name="">
           <x-buttons></x-buttons>
           <div id="tos">
-            <div class="dimensions-en">
+            <div class="dimensions">
               <ul>
-                <li>Language:</li>
-                <li>🇩🇪 <a href="#" onclick="switchLang('de')">Deutsch</a></li>
-                <li>🇬🇧 <a href="#" onclick="switchLang('en')">English</a></li>
                 <li><a class="close" href="/">✕</a></li>
               </ul>
-              <div id="en">
-                <b>By accepting these terms you agree to:</b>
+              <div>
+                <b>Um diese Dienste nutzen zu duerfen, müssen Sie folgendem zustimmen:</b>
                 <ol>
-                  <li>Only use the services by German law.</li>
-                  <li>Only use the services by EU law.</li>
+                  <li>Sie verstoßen bei der Nutzung dieser Dienste nicht gegen deutsches Recht.</li>
                 </ol>
-                <p>And confirm to be legally able to consent to these terms.</p>
                 <ul>
-                  <li><label><input type="checkbox" id="tos-accepted-en" onclick="accepted('en')" required> Accepted terms</label></li>
-                  <li><button id="button-en" class="btn btn-outline" onclick="accept(event, 'en')">Accept</button></li>
-                </ul>
-              </div>
-              <div id="de" class="display-none">
-                <b>Indem Sie diese Bedingungen akzeptieren, stimmen Sie Folgendem zu:</b>
-                <ol>
-                  <li>Nutzen Sie die Dienste ausschließlich nach deutschem Recht.</li>
-                  <li>Nutzen Sie die Dienste nur im Rahmen des EU-Rechts.</li>
-                </ol>
-                <p>Und bestätigen Sie, dass Sie diesen Bedingungen rechtlich zustimmen können.</p>
-                <ul>
-                  <li><label><input type="checkbox" id="tos-accepted-de" onclick="accepted('de')" required> Bedingungen akzeptiert</label></li>
-                  <li><button id="button-de" class="btn btn-outline" onclick="accept(event, 'de')">Akzeptieren</button></li>
+                  <li><label><input type="checkbox" id="tos-accepted" onclick="accepted()" required> Bedingung akzeptiert</label></li>
+                  <li><button id="button" class="btn btn-outline" onclick="accept(event)">Akzeptieren</button></li>
                 </ul>
               </div>
             </div>
