@@ -43,19 +43,18 @@
         border-radius: 4px;
         padding: 2px 20px 0;
       }
-      ul {
-
+      #tos ul {
         padding-left: 0;
         text-align: left;
         min-height: 20px;
       }
-      ul li {
+      #tos ul li {
         display: inline;
       }
-      ul:first-child {
+      #tos ul:first-child {
         font-size: smaller;
       }
-      ol {
+      #tos ol {
         list-style-type: disc;
         padding-left: 20px;
       }
@@ -110,22 +109,6 @@
       }
       .close {
         float: right;
-      }
-      #footer {
-        width: 100%;
-        padding: 0 20px;
-      }
-      #footer ul {
-        text-align: right;
-        margin: 0;
-      }
-      #footer li {
-        margin-left: 30px;
-        float: right;
-        display: list-item;
-      }
-      #footer a {
-        color: rgb(37, 42, 51);
       }
     </style>
     <script>
@@ -207,12 +190,7 @@
             <p class="react-terminal-line">   - <span onclick="copy(event)">hyperdht-ygg.thingylabs.io</span></p>
           </div>
         </div>
-        <div id="footer">
-          <ul>
-            <li> <a href="https://www.thingylabs.io/impressum.html">Impressum</a></li>
-            <li><a href="https://yggdrasil-network.github.io/about.html">Non-commercial research projct</a></li>
-          </ul>
-        </div>
+        <x-footer></x-footer>
       </div>
     </div>
 
