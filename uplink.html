@@ -111,6 +111,22 @@
       .close {
         float: right;
       }
+      #footer {
+        width: 100%;
+        padding: 0 20px;
+      }
+      #footer ul {
+        text-align: right;
+        margin: 0;
+      }
+      #footer li {
+        margin-left: 30px;
+        float: right;
+        display: list-item;
+      }
+      #footer a {
+        color: rgb(37, 42, 51);
+      }
     </style>
     <script>
       const tosAccepted = localStorage.getItem('tos-accepted') === 'true'
@@ -190,6 +206,12 @@
             <p class="react-terminal-line">   - <span onclick="copy(event)">hyperdht.thingylabs.io</span></p>
             <p class="react-terminal-line">   - <span onclick="copy(event)">hyperdht-ygg.thingylabs.io</span></p>
           </div>
+        </div>
+        <div id="footer">
+          <ul>
+            <li> <a href="https://www.thingylabs.io/impressum.html">Impressum</a></li>
+            <li><a href="https://yggdrasil-network.github.io/about.html">Non-commercial research projct</a></li>
+          </ul>
         </div>
       </div>
     </div>
