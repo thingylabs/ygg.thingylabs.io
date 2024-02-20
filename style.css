@@ -16,6 +16,9 @@ x-nav {
   height: 54px;
   min-width: 510px;
 }
+x-nav a {
+  margin-left: 3px;
+}
 
 iframe {
   display: none;
