@@ -24,8 +24,12 @@
       
       #footer {
         width: 100%;
-        padding: 0 20px;
+        padding: 0 12px;
         font-size: smaller;
+        color: grey;
+        top: 2px;
+        position: relative;
+        margin-top: -24px;
       }
       #footer ul {
         text-align: right;
@@ -37,7 +41,7 @@
         display: list-item;
       }
       #footer a {
-        color: rgb(37, 42, 51);
+        color: grey;
       }
     
     `)
