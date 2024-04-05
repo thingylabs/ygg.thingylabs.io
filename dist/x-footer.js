@@ -23,7 +23,7 @@
       
       #footer {
         width: 100%;
-        padding: 0 20px;
+        padding: 0 8px;
         font-size: smaller;
       }
       #footer ul {
