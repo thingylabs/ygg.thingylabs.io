@@ -11,7 +11,8 @@
         h("li", {}, [
           h("a", {"href": `https://www.thingylabs.io/impressum.html`}, `Impressum`)
         ]),
-        h("li", {},           h("a", {"href": `https://yggdrasil-network.github.io/about.html`}, `Non-commercial research projct`))
+        h("li", {},           h("a", {"href": `https://yggdrasil-network.github.io/about.html`}, `Non-commercial research projct`)),
+        h("li", {},           h("a", {"href": `https://github.com/thingylabs/ygg.thingylabs.io/`}, `Github`))
       ])
     ])
   ]
@@ -23,7 +24,7 @@
       
       #footer {
         width: 100%;
-        padding: 0 8px;
+        padding: 0 20px;
         font-size: smaller;
       }
       #footer ul {
