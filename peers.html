@@ -25,6 +25,23 @@
         border-radius: 4px;
         background-color: white;
       }
+      .react-terminal span {
+        color: black;
+        font-size: small;
+        position: absolute;
+        right: 8px;
+        bottom: 4px;
+        background-color: white;
+      }
+      .react-terminal span a {
+        color: #0000EE;
+      }
+      .react-terminal span a:visited {
+        color: #551A8B;
+      }
+      .react-terminal {
+        position: relative;
+      }
     </style>
   </head>
 
@@ -34,7 +51,8 @@
         <x-nav></x-nav>
         <div class="react-terminal-wrapper" data-terminal-name="">
           <x-buttons></x-buttons>
-          <div class="react-terminal" style="height: 600px;">
+          <div class="react-terminal">
+            <span>(Source: <a href="https://publicpeers.neilalexander.dev/">publicpeers.neilalexander.dev</a>)</span>
             <iframe src="https://publicpeers.neilalexander.dev/"></iframe>
           </div>
         </div>
