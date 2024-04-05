@@ -11,7 +11,7 @@
         h("li", {}, [
           h("a", {"href": `https://www.thingylabs.io/impressum.html`}, `Impressum`)
         ]),
-        h("li", {},           h("a", {"href": `https://yggdrasil-network.github.io/about.html`}, `Non-commercial research projct`)),
+        h("li", {},           h("a", {"href": `https://yggdrasil-network.github.io/about.html`}, `About Yggdrasil Network`)),
         h("li", {},           h("a", {"href": `https://github.com/thingylabs/ygg.thingylabs.io/`}, `Github`))
       ])
     ])
