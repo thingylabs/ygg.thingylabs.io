@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <title>ygg.thingylabs.io</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -18,8 +18,12 @@
     <style>
       .react-terminal > iframe:first-of-type {
         height: calc(100% - 70px);
-        width: 100%;
-        border: 0;
+      }
+      iframe {
+        height: 100% !important;
+        display: block;
+        border-radius: 4px;
+        background-color: white;
       }
     </style>
   </head>
@@ -31,17 +35,13 @@
         <div class="react-terminal-wrapper" data-terminal-name="">
           <x-buttons></x-buttons>
           <div class="react-terminal" style="height: 600px;">
-            <iframe src="nload/"></iframe>
-            <div style="height: 70px; overflow: hidden;">
-              <iframe src="htop/"></iframe>
-            </div>
+            <iframe src="https://publicpeers.neilalexander.dev/"></iframe>
           </div>
         </div>
         <x-footer></x-footer>
       </div>
     </div>
 
-    <script defer src="change-background-color.js"></script>
-    <link rel="prefetch" href="https://ygg-only.thingylabs.io/index.html">
+    <link rel="prefetch" href="https://ygg-only.thingylabs.io/peers.html">
   </body>
 </html>
