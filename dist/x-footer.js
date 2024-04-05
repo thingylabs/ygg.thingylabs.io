@@ -29,7 +29,7 @@
         color: grey;
         top: 2px;
         position: relative;
-        margin-top: -24px;
+        margin-top: 2px;
       }
       #footer ul {
         text-align: right;
