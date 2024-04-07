@@ -8,11 +8,10 @@
     return [  
     h("div", {"id": `footer`}, [
       h("ul", {}, [
-        h("li", {}, [
-          h("a", {"href": `https://www.thingylabs.io/impressum.html`}, `Impressum`)
-        ]),
-        h("li", {},           h("a", {"href": `https://yggdrasil-network.github.io/about.html`}, `About Yggdrasil Network`)),
-        h("li", {},           h("a", {"href": `https://github.com/thingylabs/ygg.thingylabs.io/`}, `Github`))
+        h("li", {},           h("a", {"href": `https://www.thingylabs.io/impressum.html`}, `Impressum`)),
+        h("li", {},           h("a", {"href": `https://github.com/thingylabs/ygg.thingylabs.io/`}, `Github`)),
+        h("li", {},           h("a", {"href": `services.html#show-tos`}, `Terms of Service`)),
+        h("li", {},           h("a", {"href": `https://yggdrasil-network.github.io/about.html`}, `About Yggdrasil Network`))
       ])
     ])
   ]
@@ -27,8 +26,6 @@
         padding: 0 12px;
         font-size: smaller;
         color: grey;
-        top: 2px;
-        position: relative;
         margin-top: 2px;
       }
       #footer ul {

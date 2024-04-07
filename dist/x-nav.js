@@ -12,6 +12,7 @@
     }`),
       h("a", {"href": `peers.html`, "class": `btn btn-light`}, `Public Peers`),
       h("a", {"href": `speedtest.html`, "class": `btn btn-light`}, `Speedtest`),
+      h("a", {"href": `services.html`, "class": `btn btn-light`}, `Services`),
       h("a", {"href": `uplink.html`, "class": `btn btn-light`}, `Uplink`),
       h("a", {"href": `index.html`, "class": `btn btn-light`}, `Home`)
     ])

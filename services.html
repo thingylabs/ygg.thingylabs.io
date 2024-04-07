@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ygg.thingylabs.io</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="author" content="Thingylabs">
+    <meta name="description" property="og:description" content="Yggdrasil is a new and experimental compact routing scheme designed for mesh or even Internet-like networks.">
+    <meta name="image" property="og:image" content="https://ygg.thingylabs.io/image.webp">
+    <meta property="og:title" content="ygg.thingylabs.io">
+    <meta property="og:url" content="https://ygg.thingylabs.io/">
+    <meta property="og:description" content="Yggdrasil is a new and experimental compact routing scheme designed for mesh or even Internet-like networks.">
+    <meta property="og:image" content="https://ygg.thingylabs.io/image.webp">
+    <link rel="stylesheet" href="bootstrap.purged.css">
+    <link rel="stylesheet" href="style.css">
+    <script async src="custom-elements.min.js"></script>
+    <script src="dist/index.js" type="module"></script>
+    <style>
+      span {
+        user-select: all;
+        cursor: grab;
+      }
+      span:active:hover {
+        cursor: grabbing;
+      }
+      .react-terminal-wrapper {
+        position: relative;
+      }
+      #tos {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 40px 0 10px;
+        width: 100%;
+        height: calc(100% - 80px);
+        backdrop-filter: blur(4px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+      }
+      #tos > div {
+        background-color: white;
+        border-radius: 4px;
+        padding: 2px 20px 10px;
+      }
+      #tos ul {
+        padding-left: 0;
+        text-align: center;
+        min-height: 20px;
+      }
+      #tos ul li {
+        display: inline;
+      }
+      #tos ul:first-child {
+        font-size: smaller;
+      }
+      #tos ol {
+        list-style-type: disc;
+        padding-left: 20px;
+      }
+      .btn {
+        box-sizing: border-box;
+        overflow: visible;
+        margin: 0;
+        text-transform: none;
+        display: inline-block;
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        vertical-align: middle;
+        user-select: none;
+        border: 1px solid #0d6efd;
+        border-radius: 0.25rem;
+        background-color: #0d6efd;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        cursor: pointer;
+      }
+      .btn:hover {
+        color: #0d6efd;
+        cursor: not-allowed !important;
+      }
+      .btn-solid:hover {
+        color: #fff;
+        background-color: #0b5ed7;
+        border-color: #0a58ca;
+        cursor: pointer !important;
+      }
+      .btn-outline {
+        color: #0d6efd;
+        border-color: #0d6efd;
+        background-color: transparent;
+      }
+      label {
+        cursor: pointer;
+      }
+      .display-none {
+        display: none;
+      }
+      .dimensions {
+        width: 620px;
+        margin: 0 10px;
+      }
+      .dimensions > div {
+        padding: 0 10px;
+      }
+      .close {
+        float: right;
+      }
+    </style>
+    <script>
+      const forceTos = window.location.hash === '#show-tos'
+      const tosAccepted = localStorage.getItem('tos-accepted') === 'true'
+      const hideTosStyle = document.createElement('style')
+      hideTosStyle.textContent = '#tos { display: none; }'
+      if (tosAccepted && !forceTos) {
+        document.head.appendChild(hideTosStyle)
+      }
+      function copy (event) {
+        const element = event.target
+        navigator.clipboard.writeText(element.innerText)
+        element.after(' - copied!')
+        setTimeout(_ => {
+          element.nextSibling.remove()
+        }, 1000)
+      }
+      function accepted () {
+        const button = document.getElementById('button')
+        button.classList.toggle('btn-outline')
+        button.classList.toggle('btn-solid')
+      }
+      function accept (event) {
+        event.preventDefault()
+        if (document.getElementById('tos-accepted').checked) {
+          localStorage.setItem('tos-accepted', true)
+          document.head.appendChild(hideTosStyle)
+        }
+      }
+      window.addEventListener('hashchange', function () {
+        location.reload()
+      })
+      window.addEventListener('load', function () {
+        if (forceTos && tosAccepted) {
+          document.getElementById('tos-accepted').checked = true
+        }
+      })
+    </script>
+  </head>
+
+  <body>
+    <div id="terminal">
+      <div class="container">
+        <x-nav></x-nav>
+        <div class="react-terminal-wrapper" data-terminal-name="">
+          <x-buttons></x-buttons>
+          <div id="tos">
+            <div class="dimensions">
+              <ul>
+                <li>Terms of Use</li>
+                <li><a class="close" href="/">✕</a></li>
+              </ul>
+              <div>
+                <b>Um diese Dienste nutzen zu dürfen, müssen Sie den folgenden Bedingungen zustimmen:</b>
+                <ol>
+                  <li>Sie verpflichten sich, die deutschen Gesetze bei der Nutzung dieser Dienste einzuhalten.</li>
+                  <li>Sollten Sie die Verbindungsdaten dieser Dienste weitergeben, sind Sie dazu verpflichtet, auf diese Bedingungen hinzuweisen.</li>
+                </ol>
+                <ul>
+                  <li><label><input type="checkbox" id="tos-accepted" onclick="accepted()" required> Bedingung akzeptiert</label></li>
+                  <li><button id="button" class="btn btn-outline" onclick="accept(event)">Bestätigen</button></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="react-terminal">
+            <p class="react-terminal-line">Services:</p>
+            <p class="react-terminal-line">- name: <a href="https://github.com/esnet/iperf">iperf3</a> (Speedtest)</p>
+            <p class="react-terminal-line">&nbsp; usage:</p>
+            <p class="react-terminal-line">&nbsp; - <span onclick="copy(event)">iperf3 -6 -c ygg-only.thingylabs.io</span></p>
+            <p class="react-terminal-line">&nbsp; - <span onclick="copy(event)">iperf3 -4 -c ygg-uplink.thingylabs.io</span></p>
+            <p class="react-terminal-line">- name: <a href="https://github.com/mafintosh/signalhub">signalhub</a></p>
+            <p class="react-terminal-line">&nbsp; urls:</p>
+            <p class="react-terminal-line">&nbsp; - <span onclick="copy(event)">https://signalhub.thingylabs.io</span></p>
+            <p class="react-terminal-line">&nbsp; - <span onclick="copy(event)">https://signalhub-ygg.thingylabs.io</span></p>
+            <p class="react-terminal-line">- name: <a href="https://github.com/holepunchto/hyperdht">hyperdht</a></p>
+            <p class="react-terminal-line">&nbsp; urls:</p>
+            <p class="react-terminal-line">&nbsp; - <span onclick="copy(event)">hyperdht.thingylabs.io:49737</span> (IPv6 only)</p>
+            <p class="react-terminal-line">&nbsp; - <span onclick="copy(event)">hyperdht-ygg.thingylabs.io:49737</span></p>
+          </div>
+        </div>
+        <x-footer></x-footer>
+      </div>
+    </div>
+
+    <script defer src="change-background-color.js"></script>
+    <link rel="prefetch" href="https://ygg-only.thingylabs.io/uplink.html">
+  </body>
+</html>
