@@ -10,7 +10,7 @@
       h("a", {"href": `https://${!isYgg ? 'ygg-only' : 'ygg'}.thingylabs.io/`, "id": `ygg-switch`, "class": `btn btn-light`}, `${
       !isYgg ? '⚡' : '🔌'
     }`),
-      h("a", {"href": `peers.html`, "class": `btn btn-light`}, `Public Peers`),
+      h("a", {"href": `peers.html`, "class": `btn btn-light`}, `Peers`),
       h("a", {"href": `map.html`, "class": `btn btn-light`}, `Map`),
       h("a", {"href": `speedtest.html`, "class": `btn btn-light`}, `Speedtest`),
       h("a", {"href": `services.html`, "class": `btn btn-light`}, `Services`),
