@@ -138,6 +138,9 @@
         if (document.getElementById('tos-accepted').checked) {
           localStorage.setItem('tos-accepted', true)
           document.head.appendChild(hideTosStyle)
+          if (forceTos) {
+            window.location.hash = ''
+          }
         }
       }
       window.addEventListener('hashchange', function () {
@@ -146,6 +149,7 @@
       window.addEventListener('load', function () {
         if (forceTos && tosAccepted) {
           document.getElementById('tos-accepted').checked = true
+          accepted()
         }
       })
     </script>
