@@ -143,6 +143,16 @@
           }
         }
       }
+      function closeTos () {
+        if (document.getElementById('tos-accepted').checked && tosAccepted) {
+          document.head.appendChild(hideTosStyle)
+          if (forceTos) {
+            window.location.hash = ''
+          }
+          return false
+        }
+        window.open('/', '_self')
+      }
       window.addEventListener('hashchange', function () {
         location.reload()
       })
@@ -165,7 +175,7 @@
             <div class="dimensions">
               <ul>
                 <li>Terms of Use</li>
-                <li><a class="close" href="/">✕</a></li>
+                <li><a class="close" href="#" onclick="return closeTos()">✕</a></li>
               </ul>
               <div>
                 <b>Um diese Dienste nutzen zu dürfen, müssen Sie den folgenden Bedingungen zustimmen:</b>
