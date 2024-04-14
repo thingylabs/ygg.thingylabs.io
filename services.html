@@ -120,8 +120,9 @@
     </style>
     <script>
       const forceTos = window.location.hash === '#show-tos'
-      const tosAccepted = localStorage.getItem('tos-accepted') === 'true'
+      let tosAccepted = localStorage.getItem('tos-accepted') === 'true'
       const hideTosStyle = document.createElement('style')
+      let buttonActivated = false
       hideTosStyle.textContent = '#tos { display: none; }'
       if (tosAccepted && !forceTos) {
         document.head.appendChild(hideTosStyle)
@@ -134,23 +135,38 @@
           element.nextSibling.remove()
         }, 1000)
       }
-      function accepted () {
+      function togglButton () {
+        if (tosAccepted) {
+          if (buttonActivated) {
+            return
+          }
+          buttonActivated = true
+        }
         const button = document.getElementById('button')
         button.classList.toggle('btn-outline')
         button.classList.toggle('btn-solid')
       }
       function accept (event) {
         event.preventDefault()
-        if (document.getElementById('tos-accepted').checked) {
-          localStorage.setItem('tos-accepted', true)
+        const checkbox = document.getElementById('tos-accepted').checked
+        if (checkbox !== tosAccepted) {
+          localStorage.setItem('tos-accepted', checkbox)
+        }
+        if (checkbox) {
           document.head.appendChild(hideTosStyle)
           if (forceTos) {
             window.location.hash = ''
           }
+          return
+        }
+        if (tosAccepted) {
+          tosAccepted = false
+          togglButton()
         }
       }
       function closeTos () {
-        if (document.getElementById('tos-accepted').checked && tosAccepted) {
+        event.preventDefault()
+        if (tosAccepted) {
           document.head.appendChild(hideTosStyle)
           if (forceTos) {
             window.location.hash = ''
@@ -158,6 +174,7 @@
           return false
         }
         window.open('/', '_self')
+        return false
       }
       window.addEventListener('hashchange', function () {
         location.reload()
@@ -165,7 +182,7 @@
       window.addEventListener('load', function () {
         if (forceTos && tosAccepted) {
           document.getElementById('tos-accepted').checked = true
-          accepted()
+          togglButton()
         }
       })
     </script>
@@ -181,7 +198,7 @@
             <div class="dimensions">
               <ul>
                 <li>Terms of Use</li>
-                <li><a class="close" href="#" onclick="return closeTos()">✕</a></li>
+                <li><a class="close" href="#" onclick="closeTos(event)">✕</a></li>
               </ul>
               <div>
                 <b>Um diese Dienste nutzen zu dürfen, müssen Sie den folgenden Bedingungen zustimmen:</b>
@@ -190,7 +207,7 @@
                   <li>Sollten Sie die Verbindungsdaten dieser Dienste weitergeben, sind Sie dazu verpflichtet, auf diese Bedingungen hinzuweisen.</li>
                 </ol>
                 <ul>
-                  <li><label><input type="checkbox" id="tos-accepted" onclick="accepted()" required> Bedingung akzeptiert</label></li>
+                  <li><label><input type="checkbox" id="tos-accepted" onclick="togglButton(event)" required> Bedingung akzeptiert</label></li>
                   <li><button id="button" class="btn btn-outline" onclick="accept(event)">Bestätigen</button></li>
                 </ul>
               </div>
