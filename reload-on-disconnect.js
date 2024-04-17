@@ -5,10 +5,10 @@ async function reloadOnDisconnect () {
         return iframe.contentWindow.document.body.querySelector('.xterm-overlay')
       })
       if (faultyIframe) {
-        faultyIframe.contentWindow.location.reload()
         faultyIframe.addEventListener('load', function() {
           changeBackgroundColor(faultyIframe)
         })
+        faultyIframe.contentWindow.location.reload()
       }
     }, 3 * 1000)
     await new Promise(done => {
