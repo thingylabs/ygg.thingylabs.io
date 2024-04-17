@@ -153,10 +153,11 @@
           localStorage.setItem('tos-accepted', checkbox)
         }
         if (checkbox) {
-          document.head.appendChild(hideTosStyle)
           if (forceTos) {
             window.location.hash = ''
+            return
           }
+          document.head.appendChild(hideTosStyle)
           return
         }
         if (tosAccepted) {
