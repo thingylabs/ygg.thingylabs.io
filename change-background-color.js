@@ -24,7 +24,7 @@ function findContent (iframe) {
 function appendStyle (iframe) {
   const styleElem = document.createElement('style')
   styleElem.textContent = `
-    #terminal, .xterm-viewport, .react-terminal-wrapper {
+    .terminal, #terminal, .xterm-viewport, .react-terminal-wrapper {
       background-color: rgb(37, 42, 51) !important;
     }
   `
