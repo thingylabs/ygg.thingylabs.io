@@ -6,6 +6,7 @@ async function reloadOnDisconnect () {
       })
       if (faultyIframe) {
         faultyIframe.contentWindow.location.reload()
+        changeBackgroundColor(faultyIframe)
       }
     }, 3 * 1000)
     await new Promise(done => {
