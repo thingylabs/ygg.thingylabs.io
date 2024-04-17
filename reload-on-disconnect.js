@@ -1,7 +1,9 @@
 async function reloadOnDisconnect () {
   while (true) {
     const interval = setInterval(function () {
-      const error = document.querySelector('.xterm-overlay').length
+      const error = Array.from(document.querySelectorAll('iframe')).some(iframe => {
+        return iframe.contentWindow.document.body.querySelector('.xterm-overlay')
+      })
       if (error) {
         window.location.reload()
       }
