@@ -1,5 +1,5 @@
 function changeBackgroundColor (iframe) {
-  const iframes = [iframe] || document.getElementsByTagName('iframe')
+  const iframes = (iframe && [iframe]) || document.getElementsByTagName('iframe')
   for (const iframe of iframes) {
     findContent(iframe).then(_ => {
       appendStyle(iframe)
@@ -7,8 +7,8 @@ function changeBackgroundColor (iframe) {
   }
 
   function findContent (iframe) {
-    return new Promise(done => {
-      search(iframe, done)
+    return new Promise(resolve => {
+      search(iframe, resolve)
     })
 
     function search (iframe, done, isRetry) {
