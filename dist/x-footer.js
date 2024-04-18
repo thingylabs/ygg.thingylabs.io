@@ -8,7 +8,7 @@
     return [  
     h("div", {"id": `footer`}, [
       h("ul", {"style": `padding-left: 0;`}, [
-        h("li", {"style": `list-style-type: disclosure-open;`}, [
+        h("li", {"style": `list-style-type: none;`}, [
 `🔬 `,
           h("a", {"href": `https://www.thingylabs.io/`}, `Thingylabs`)
         ]),
