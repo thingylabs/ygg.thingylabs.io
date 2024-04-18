@@ -7,9 +7,9 @@
   const __template = function({ state }) {
     return [  
     h("div", {"id": `footer`}, [
-      h("ul", {}, [
+      h("ul", {"style": `padding-left: 0;`}, [
         h("li", {"style": `list-style-type: disclosure-open;`}, [
-`Sponsored by 🔬 `,
+`🔬 `,
           h("a", {"href": `https://www.thingylabs.io/`}, `Thingylabs`)
         ]),
         h("li", {},           h("a", {"href": `https://www.thingylabs.io/impressum.html`}, `Impressum`)),
