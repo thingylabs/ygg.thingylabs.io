@@ -8,6 +8,10 @@
     return [  
     h("div", {"id": `footer`}, [
       h("ul", {}, [
+        h("li", {"style": `list-style-type: disclosure-open;`}, [
+`Sponsored by 🔬 `,
+          h("a", {"href": `https://www.thingylabs.io/`}, `Thingylabs`)
+        ]),
         h("li", {},           h("a", {"href": `https://www.thingylabs.io/impressum.html`}, `Impressum`)),
         h("li", {},           h("a", {"href": `https://github.com/thingylabs/ygg.thingylabs.io/`}, `Github`)),
         h("li", {},           h("a", {"href": `services.html#show-tos`}, `Terms of Service`)),
