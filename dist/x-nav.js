@@ -10,12 +10,12 @@
       h("a", {"href": `https://${!isYgg ? 'ygg-only' : 'ygg'}.thingylabs.io/`, "id": `ygg-switch`, "class": `btn btn-light`}, `${
       !isYgg ? '⚡' : '🔌'
     }`),
-      h("a", {"href": `peers.html`, "class": `btn btn-light`}, `Peers`),
-      h("a", {"href": `map.html`, "class": `btn btn-light`}, `Map`),
-      h("a", {"href": `speedtest.html`, "class": `btn btn-light`}, `Speedtest`),
-      h("a", {"href": `services.html`, "class": `btn btn-light`}, `Services`),
-      h("a", {"href": `uplink.html`, "class": `btn btn-light`}, `Uplink`),
-      h("a", {"href": `index.html`, "class": `btn btn-light`}, `Home`)
+      h("a", {"href": `peers.html`, "class": `btn btn-light ${isActive('peers')}`}, `Peers`),
+      h("a", {"href": `map.html`, "class": `btn btn-light ${isActive('map')}`}, `Map`),
+      h("a", {"href": `speedtest.html`, "class": `btn btn-light ${isActive('speedtest')}`}, `Speedtest`),
+      h("a", {"href": `services.html`, "class": `btn btn-light ${isActive('services')}`}, `Services`),
+      h("a", {"href": `uplink.html`, "class": `btn btn-light ${isActive('uplink')}`}, `Uplink`),
+      h("a", {"href": `index.html`, "class": `btn btn-light ${isActive('index')}`}, `Home`)
     ])
   ]
   }
@@ -26,6 +26,9 @@
       
       @import url(bootstrap.purged.css);
       @import url(style.css);
+      .bold {
+        font-weight: bold;
+      }
     
     `)
   }
@@ -49,6 +52,21 @@
   export default class extends Lego {
     init() {
       isYgg = document.location.host && document.location.host.includes('-only')
+    }
+  }
+
+  // Highlight active menu item
+  const path = document.location.pathname
+  let active = path.substring(
+    path.indexOf('/') + 1,
+    path.lastIndexOf('.')
+  )
+  if (active === '/') {
+    active = 'index'
+  }
+  function isActive (name) {
+    if (active === name) {
+      return 'bold'
     }
   }
 

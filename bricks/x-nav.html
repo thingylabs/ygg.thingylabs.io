@@ -1,6 +1,9 @@
 <style>
   @import url(bootstrap.purged.css);
   @import url(style.css);
+  .bold {
+    font-weight: bold;
+  }
 </style>
 <script>
   let isYgg
@@ -9,17 +12,32 @@
       isYgg = document.location.host && document.location.host.includes('-only')
     }
   }
+
+  // Highlight active menu item
+  const path = document.location.pathname
+  let active = path.substring(
+    path.indexOf('/') + 1,
+    path.lastIndexOf('.')
+  )
+  if (active === '/') {
+    active = 'index'
+  }
+  function isActive (name) {
+    if (active === name) {
+      return 'bold'
+    }
+  }
 </script>
 <template>
   <div class="d-flex flex-row-reverse p-2">
     <a href="https://${!isYgg ? 'ygg-only' : 'ygg'}.thingylabs.io/" id="ygg-switch" class="btn btn-light">${
       !isYgg ? '⚡' : '🔌'
     }</a>
-    <a href="peers.html" class="btn btn-light">Peers</a>
-    <a href="map.html" class="btn btn-light">Map</a>
-    <a href="speedtest.html" class="btn btn-light">Speedtest</a>
-    <a href="services.html" class="btn btn-light">Services</a>
-    <a href="uplink.html" class="btn btn-light">Uplink</a>
-    <a href="index.html" class="btn btn-light">Home</a>
+    <a href="peers.html" class="btn btn-light ${isActive('peers')}">Peers</a>
+    <a href="map.html" class="btn btn-light ${isActive('map')}">Map</a>
+    <a href="speedtest.html" class="btn btn-light ${isActive('speedtest')}">Speedtest</a>
+    <a href="services.html" class="btn btn-light ${isActive('services')}">Services</a>
+    <a href="uplink.html" class="btn btn-light ${isActive('uplink')}">Uplink</a>
+    <a href="index.html" class="btn btn-light ${isActive('index')}">Home</a>
   </div>
 </template>
