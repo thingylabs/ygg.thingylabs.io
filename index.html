@@ -21,6 +21,18 @@
         width: 100%;
         border: 0;
       }
+      .react-terminal-wrapper::after {
+        content: attr(data-terminal-name);
+        position: absolute;
+        color: whitesmoke;
+        top: 71px;
+        right: 70px;
+        width: 100%;
+        text-align:right;
+        pointer-events: none;
+        font-size: 0.9em;
+        opacity: 0.97;
+      }
     </style>
   </head>
 
@@ -42,6 +54,7 @@
     </div>
 
     <script defer src="lib/change-background-color.js"></script>
+    <script defer src="lib/poll-ygg-connected-peers.js"></script>
     <script defer src="lib/reload-on-disconnect.js"></script>
     <script defer src="lib/prefetch-via-yggdrasil.js"></script>
   </body>
