@@ -21,6 +21,21 @@
         width: 100%;
         border: 0;
       }
+      .react-terminal-wrapper::after {
+        color: whitesmoke;
+        top: 72px;
+        padding-right: 70px;
+        width: 100%;
+        text-align: right;
+        font-size: 0.9em;
+      }
+      @media(max-width: 992px) {
+        .react-terminal-wrapper::after {
+          top: 43px;
+          padding-right: 35px;
+          font-size: calc(0.9em / 2);
+        }
+      }
     </style>
   </head>
 
@@ -42,6 +57,7 @@
     </div>
 
     <script defer src="lib/change-background-color.js"></script>
+    <script defer src="lib/poll-ygg-connected-peers.js"></script>
     <script defer src="lib/reload-on-disconnect.js"></script>
     <script defer src="lib/prefetch-via-yggdrasil.js"></script>
   </body>
