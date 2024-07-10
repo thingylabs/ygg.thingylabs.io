@@ -15,7 +15,7 @@
 `🔬 `,
           h("a", {"href": `https://www.thingylabs.io/`}, `Thingylabs`)
         ]),
-        h("li", {"style": `float: right;`},           h("a", {"href": `https://open.thingylabs.io`}, `„We ♥ Open Souce“`))
+        h("li", {"style": `list-style-type: none; float: right;`},           h("a", {"href": `https://open.thingylabs.io`}, `„We ♥ Open Souce“`))
       ])
     ])
   ]
