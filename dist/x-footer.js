@@ -9,13 +9,12 @@
     h("div", {"id": `footer`}, [
       h("ul", {"style": `padding-left: 0;`}, [
         h("li", {"style": `margin-left: 27px;`},           h("a", {"href": `https://yggdrasil-network.github.io/about.html`}, `About`)),
-        h("li", {},           h("a", {"href": `services.html#show-tos`}, `Terms of Service`)),
+        h("li", {},           h("a", {"href": `services.html#show-tos`}, `Terms`)),
         h("li", {},           h("a", {"href": `https://github.com/thingylabs/ygg.thingylabs.io/`}, `Github`)),
         h("li", {"style": `list-style-type: none; float: right; margin-right: 5px; margin-left: 20px;`}, [
 `🔬 `,
           h("a", {"href": `https://www.thingylabs.io/`}, `Thingylabs`)
         ]),
-        h("li", {"style": `float: right;`},           h("a", {"href": `https://www.thingylabs.io/impressum.html`}, `Impressum`)),
         h("li", {"style": `float: right;`},           h("a", {"href": `https://open.thingylabs.io`}, `„We ♥ Open Souce“`))
       ])
     ])
