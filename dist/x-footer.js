@@ -15,7 +15,8 @@
 `🔬 `,
           h("a", {"href": `https://www.thingylabs.io/`}, `Thingylabs`)
         ]),
-        h("li", {"style": `float: right;`},           h("a", {"href": `https://www.thingylabs.io/impressum.html`}, `Impressum`))
+        h("li", {"style": `float: right;`},           h("a", {"href": `https://www.thingylabs.io/impressum.html`}, `Impressum`)),
+        h("li", {"style": `float: right;`},           h("a", {"href": `https://open.thingylabs.io`}, `„We ♥ Open Souce“`))
       ])
     ])
   ]
